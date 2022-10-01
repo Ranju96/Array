@@ -1,35 +1,23 @@
-#include <stdio.h>
-#define row 3
-#define col 2
-int main() 
+#include<stdio.h>
+int main()
 {
-  int a[row][col];
-  int aT[row][col];
-  int row, col;
-  printf("Enter rows and col: ");
-  scanf("%d %d", &row, &col);
-  for (int i = 0; i< row; ++i)
-  {
-       for (int j = 0; j< col; ++j)
-       {
-         scanf("%d", &a[i][j]);
-       }
-  }
-  for (int i = 0; i< row; ++i)
-  {
-       for (int j = 0; j< col; ++j)
-         {
-	       a[i][j]=aT[j][i];
-	 }
-   printf("\nTranspose of the matrix:\n");
-  }
-  for (int i = 0; i < col; ++i)
-  {
-      for (int j = 0; j < row; ++j) 
-      {
-        printf("%d  ", aT[i][j]);
-      }
-    printf("\n");
-  return 0;
-  }
+	int a[10][20], temp;
+	int i, j ,row ,column,n;
+	printf("Enter the row and column ");
+	scanf("%d%d",&row,&column);
+	printf( "\nEnter elements of matrix: " );
+	for(i=0; i<3; i++)
+	{
+		for(j=0; j<3; j++)
+		{
+			if(i<j)
+			{
+				temp=a[i][j];
+				a[i][j]=a[j][i];
+				a[j][i]=temp;
+			}
+		}
+	}
+	printf("%d", temp);
 }
+
